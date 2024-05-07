@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Formulaire de paiement</title>
+
+</head>
+<body>
+    <header>
+        <table>
+         <tr>
+        <th><img class="logo" src="logo.png" alt="logo cozy home"  ></th>
+        <th> <div class="container1">
+            <h1 class="titre">COZY HOME</h1>
+            <h2 class="welcome">Welcome to our website! We're thrilled to have you here and invite you to delve into the rich tapestry of articles waiting to be discovered.</h2>
+        </div></th>
+         </tr>
+    </table>
+
+    <div class="mycontainer">
+            <div ><a href="pagehome.html" class="link">Acceuil</a></div>
+            <div ><a href="pagecuisine.html" class="link">Cuisine</a></div>
+             <div ><a href="pagedecoration.html" class="link">Decoration</a></div>
+             <div > <a href="pagesalon.html" class="link">Salon</a></div>
+             <div > <a href="pagechambre.html" class="link">Chambre</a></div>
+             <div><img class="panier" src="panier.png" alt="panier"></div>
+             <div > <div class="animation start-acceuil"></div></div>
+             
+        </div>
+    </header>
+    <div class="form">
+        <ol>
+    <div class="h1">
+    <h1>Formulaire de Paiement</h1>
+    </div>
+    <form method="get" action="traitement"></form>
+    <div class="info">
+    
+
+           <li> <legend>Informations de paiement</legend></li>
+           <label for="selectOptions">Nombre de pieces</label>
+           <select id="selectOptions" name="selectOptions">
+               <option value="option1"> 1</option>
+               <option value="option2"> 2</option>
+               <option value="option3"> 3</option>
+               <option value="option4"> 4</option>
+               <option value="option5"> 5</option>
+               <option value="option1"> 6</option>
+               <option value="option2"> 7</option>
+               <option value="option3"> 8</option>
+               <option value="option4"> 9</option>
+               <option value="option4"> 10</option>
+           </select>
+           <br>
+            <label for="montant">Montant Total à payer </label>
+            <input type="text" value="0"><br>
+            <label for="PAYMENT">Mode de payment </label>
+            <div class="checkbox">
+                <label for="checkbox1">Carte e-dinar</label></div>
+                <div class="checkbox"><input type="checkbox" id="checkbox2" name="checkbox2" value="option2"></div>
+                 <div class="checkbox">
+                    <label for="checkbox2">Carte Bancaire</label></div>
+                    <div class="checkbox"> <input type="checkbox" id="checkbox3" name="checkbox3" value="option3">
+                 </div>
+     
+    </div>
+    <div class="paiement">
+
+           <li> <legend>Valider l'achat</legend></li>
+            <label for="NN">Nom</label>
+            <input type="text" value="Votre Nom"><br>
+            <label for="PP">Prenom</label>
+            <input type="text" value="Votre Prenom"><br>
+            <label for="AA">Adresse de livraison</label>
+            <input type="text" value="Rue,Ville,Pays"><br>
+            <label for="Num">Numéro de téléphone</label>
+            <input type="text" value="+216 000 000"><br>
+            <label for="NN">E-mail</label>
+            <input type="email" value="Votre E-mail"><br>
+            <label for="num">Numéro de la carte bancaire </label>
+            <input type="password" value="00000000"><br>
+            <div class="radio">
+            <input type="radio" id="option1" name="options" value="option1"></div>
+            <div class="radio"> <label for="option1">Voulez-vous livraison?</label></div>
+    </div><div class= "button">
+        <a href="payer.html" class="link"><button type="/submit-form" method="post">payer</button></a>
+        <button type="/submit-form" method="post">retour</button></div>
+ </form>
+</div>
+<footer>
+    <h3>CONTACT: +21627896154 </h3>
+    <a href="mailto : cosyhome@gmail.com ?subject=contact mail">cosyhome@gmail.com</a> <br><br>
+    <a href="https://www.facebook.com/zaineb.boulabyar/">page facebook :cozy home</a><BR><BR>
+    <a href="fichier.txt">A PROPOS DE NOUS</a>
+  </footer>
+  <script src="script.js">
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.form form');
+    const selectOptions = document.getElementById('selectOptions');
+    const montantInput = document.querySelector('input[type="text"]');
+    const modePaiementCheckboxes = document.querySelectorAll('.checkbox input[type="checkbox"]');
+    const nomInput = document.querySelector('input[name="NN"]');
+    const prenomInput = document.querySelector('input[name="PP"]');
+    const adresseInput = document.querySelector('input[name="AA"]');
+    const telephoneInput = document.querySelector('input[name="Num"]');
+    const emailInput = document.querySelector('input[type="email"]');
+    const carteBancaireInput = document.querySelector('input[type="password"]');
+    const livraisonRadio = document.getElementById('option1');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+
+        // Récupérer les valeurs des champs du formulaire
+        const nombrePieces = selectOptions.value;
+        const montantTotal = montantInput.value;
+        const modePaiement = [...modePaiementCheckboxes].filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+        const nom = nomInput.value;
+        const prenom = prenomInput.value;
+        const adresse = adresseInput.value;
+        const telephone = telephoneInput.value;
+        const email = emailInput.value;
+        const carteBancaire = carteBancaireInput.value;
+        const livraison = livraisonRadio.checked;
+
+        // Effectuer toute autre validation nécessaire ici
+
+        // Envoyer les données à un serveur ou effectuer d'autres actions
+        console.log('Données du formulaire :', {
+            nombrePieces,
+            montantTotal,
+            modePaiement,
+            nom,
+            prenom,
+            adresse,
+            telephone,
+            email,
+            carteBancaire,
+            livraison
+        });
+
+        // Réinitialiser le formulaire après la soumission
+        form.reset();
+
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const radios = document.querySelectorAll('input[type="radio"][name="payment"]');
+    const selectedPayment = document.getElementById('selectedPayment');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            selectedPayment.textContent = `Mode de paiement sélectionné : ${this.value}`;
+        });
+    });
+});
+});
+</script>
+</body>
+</html>

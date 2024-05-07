@@ -1,0 +1,94 @@
+
+
+#titre {
+    text-align: center;
+    font-weight: bold;
+    color: #3b2d13;
+    font-size: 120px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+   
+       
+}
+body{
+background-image: url('background.jpg');
+background-size: cover; 
+background-position: center; 
+}
+.mycontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    margin-left: 70px;
+    margin-right: 70px;
+    
+    background-color: rgb(214, 220, 176);
+}
+
+.mycontainer div {
+    margin-right: 20px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #333;
+}
+
+.home-photo {
+    width: 1800px; 
+    height: 500px;
+    margin-right: 50px;
+    margin-left:50px ;
+    margin-bottom: 10px;
+}
+
+nav {
+    
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .images {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+
+.salon-image,
+.cuisine-image,
+.chambre-image {
+    width: 500px; 
+    height: 500px; 
+}
+
+
+nav figure img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+nav figure figcaption {
+    text-align: center;
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #7d5b2f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
